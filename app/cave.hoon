@@ -158,25 +158,26 @@
   ++  on-watch
     |=  =path
     ^-  (quip card _this)
-    ?+    path  (on-watch:def path)
-        [%http-response *]    `this
-        [%display-updates *]  `this
-        [~ %gossip %source ~]
-      :_  this
-      ::  only send the latest shape from our wall
-      ::
-      =/  elm=(list [dial=@dr =stone =scratch])
-        (sort (add-relative:hc ~(tap by wall)) ror:hc)
-      ?~  elm  ~
-      =/  =shape
-        %+  murn  elm
-        |=  [dial=@dr =stone =scratch]
-        ?.  =(dial dial.i.elm)  ~
-        `[stone scratch]
-      :_  ~
-      %-  invent:gossip
-      action+!>(`action`[%carve shape])
-    ==
+    ?:  ?|  ?=([%http-response *] path)
+            ?=([%display-updates *] path)
+        ==
+        `this
+    ?.  =(/~/gossip/source path)
+      (on-watch:def path)
+    :_  this
+    ::  only send the latest shape from our wall
+    ::
+    =/  elm=(list [dial=@dr =stone =scratch])
+      (sort (add-relative:hc ~(tap by wall)) ror:hc)
+    ?~  elm  ~
+    =/  =shape
+      %+  murn  elm
+      |=  [dial=@dr =stone =scratch]
+      ?.  =(dial dial.i.elm)  ~
+      `[stone scratch]
+    :_  ~
+    %-  invent:gossip
+    action+!>(`action`[%carve shape])
   ::
   ++  on-peek
     |=  =path
@@ -238,6 +239,7 @@
 ++  press
   |=  =shape
   ^-  (unit _wall)
+  ?:  =(~ shape)  ~
   =/  dry  wall
   |-
   ?~  shape  `dry

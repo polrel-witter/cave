@@ -2,7 +2,7 @@
   title+'cave'
   info+'swarm ascii art'
   color+0x1a.1aff
-  version+[1 0 0]
+  version+[1 0 1]
   website+'https://x.com/polrel_witter'
   license+'MIT'
   site+/apps/cave
