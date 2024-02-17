@@ -1,0 +1,9 @@
+:~
+  title+'cave'
+  info+'swarm ascii art'
+  color+0x1a.1aff
+  version+[1 0 0]
+  website+'https://x.com/polrel_witter'
+  license+'MIT'
+  site+/apps/cave
+==
