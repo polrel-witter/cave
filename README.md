@@ -1,6 +1,4 @@
 # %cave
-swarm ascii art.
-
 make shapes and distribute to `%pals`. ones we receive are writte to our wall if they don't overwrite any stones with an existing scratch.
 
 there are a couple actions:
