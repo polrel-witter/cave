@@ -1,7 +1,6 @@
 ::  %cave: swarm ascii art
 ::
-::    make shapes and distribute to %pals. ones we receive are written to
-::    our wall if they don't overwrite any stones with an existing scratch.
+::    make shapes and distribute to %pals.
 ::
 ::    there are a couple actions:
 ::    - %clear: delete all shapes in our wall
@@ -233,8 +232,7 @@
   =/  dial=@dr
     (sub now.bowl when.scratch.i.a)
   $(b [[dial stone.i.a scratch.i.a] b], a t.a)
-::  +press: slot a new shape into our wall if indicies do not overlap
-::  and glyphs are 1 char
+::  +press: slot a new shape into our wall
 ::
 ++  press
   |=  =shape
